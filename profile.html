@@ -54,10 +54,10 @@
      var app = angular.module('profile-page', []);
       app.controller('button-controller', ['$scope', '$window', function($scope, $window) {
         $scope.goback=function(){
-          $window.alert(1);
+          $window.history.back();
         }
         $scope.edit=function(){
-          $window.alert(2);
+          $window.location='profileedit.html';
         }
       }]);
     </script>
