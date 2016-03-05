@@ -20,11 +20,11 @@
     <![endif]-->
   </head>
   <body>
-    <div class="site-wrapper">
+    <div class="site-wrapper" ng-controller="site-control">
       <div class="page-container">
 
         <div class="head clearfix">
-          <div class="page-top" ng-controller="button-controller">
+          <div class="page-top">
             <nav>
                 <button type="button" class="btn btn-primary" id="back" ng-click="goback()">Back</button>
                 <button type="button" class="btn btn-primary" id="edit" ng-click="edit()">Edit</button>
@@ -37,8 +37,7 @@
           <div class="bar">
             <h1 class="category">Name</h1>
           </div>
-          <div class="name-field">
-            <h1 class="profname">Zack</h1>
+          <div class="name-field" id="nmfd">
           </div>
 
           <div class="bar">
@@ -82,14 +81,19 @@
 
     <script>
      var app = angular.module('profile-page', []);
-      app.controller('button-controller', ['$scope', '$window', function($scope, $window) {
+      app.controller('site-control', ['$scope', '$window', '$compile', function($scope, $window, $compile) {
         $scope.goback=function(){
           $window.history.back();
-        }
+        };
+
         $scope.edit=function(){
-          $window.location='profileedit.html';
-        }
+          var box = '<form><input type="text" maxlength="20" /></form>';
+          var topscope = angular.element(document).scope();
+          var elem = $compile(box)(topscope);
+          angular.element(document.getElementById('nmfd')).append(elem);
+        };
       }]);
+
     </script>
   </body>
 </html>
