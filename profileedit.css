@@ -7,7 +7,7 @@ body {
 .profile {
 	text-align: center;
 	color: white;
-	font: 36px  Georgia, serif;
+	font: 36px  Arial, serif;
 }
 
 #done {
@@ -33,7 +33,7 @@ body {
 	height: 40px;
 }
 
-.name-bar {
+.bar {
 	background-color: #0fd00f;
 	height: 5%;
 	width: 96%;
@@ -42,15 +42,15 @@ body {
 	border-radius: 5px;
 }
 
-.name {
+.category {
 	color: white;
 	padding-left: 2%;
 	padding-top: 2px;
-	font: 20px Georgia, serif;
+	font: 20px Arial, serif;
 }
 
 .name-field {
-	background-color: #cccccc;
+	background-color: #aaaaaa;
 	height: 5%;
 	width: 96%;
 	margin-left: 2%;
@@ -62,5 +62,69 @@ body {
 	color: white;
 	padding-left: 2%;
 	padding-top: 2px;
-	font: 20px Georgia, serif;
+	font: 20px Arial, serif;
+}
+
+.location-field {
+	background-color: #aaaaaa;
+	height: 5%;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 5px;
+}
+
+.locationname {
+	color: white;
+	padding-left: 2%;
+	padding-top: 2px;
+	font: 20px Arial, serif;
+}
+
+.pantry-field {
+	background-color: #aaaaaa;
+	height: 5%;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 5px;
+}
+
+.pantryname {
+	color: white;
+	padding-left: 2%;
+	padding-top: 2px;
+	font: 20px Arial, serif;
+}
+
+.share-field {
+	background-color: #aaaaaa;
+	height: 10%;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 5px;
+}
+
+.sharename {
+	color: white;
+	padding-left: 2%;
+	padding-top: 2px;
+	font: 20px Arial, serif;
+}
+
+.diet-field {
+	background-color: #aaaaaa;
+	height: 15%;
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 5px;
+}
+
+.dietname {
+	color: white;
+	padding-left: 2%;
+	padding-top: 2px;
+	font: 20px Arial, serif;
 }

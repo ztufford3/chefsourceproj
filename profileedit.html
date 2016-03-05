@@ -26,19 +26,49 @@
         <div class="head clearfix">
           <div class="page-top" ng-controller="button-controller">
             <nav>
-                <button type="button" class="btn btn-primary" id="back" ng-click="goback()">Back<button/>
-                <button type="button" class="btn btn-primary" id="edit" ng-click="edit()">Edit<button/>
+                <button type="button" class="btn btn-primary" id="back" ng-click="goback()">Back</button>
+                <button type="button" class="btn btn-primary" id="done" ng-click="done()">Done</button>
             </nav>
             <h3 class="profile">Profile Edit</h3>
           </div>
         </div>
 
         
-          <div class="name-bar">
-            <h1 class="name">Name</h1>
+          <div class="bar">
+            <h1 class="category">Name</h1>
           </div>
           <div class="name-field">
             <h1 class="profname">Zack</h1>
+          </div>
+
+          <div class="bar">
+            <h1 class="category">Location</h1>
+          </div>
+          <div class="location-field">
+            <h1 class="locationname">North Ave Apartments</h1>
+          </div>
+        
+          <div class="bar">
+            <h1 class="category">Pantry</h1>
+          </div>
+          <div class="pantry-field">
+            <h1 class="pantryname">Flour</h1>
+            <h1 class="pantryname">Sugar</h1>
+          </div>
+
+          <div class="bar">
+            <h1 class="category">Share Count</h1>
+          </div>
+          <div class="share-field">
+            <h1 class="sharename">Items Shared:</h1>
+            <h1 class="sharename">Items Received:</h1>
+          </div>
+
+          <div class="bar">
+            <h1 class="category">Dietary Restrictions</h1>
+          </div>
+          <div class="diet-field">
+            <h1 class="dietname">None</h1>
           </div>
         
       </div>
@@ -56,7 +86,7 @@
         $scope.goback=function(){
           $window.history.back();
         }
-        $scope.edit=function(){
+        $scope.done=function(){
           $window.location='profile.html';
         }
       }]);
