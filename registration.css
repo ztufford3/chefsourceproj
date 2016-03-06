@@ -1,0 +1,29 @@
+html,
+body {
+	height: 100%;
+	background-color: #aaaaaa;
+}
+
+.page-container {
+	margin-top: 10px;
+}
+
+.page-top {
+	color: white;
+	text-align: center;
+}
+
+.bar {
+	margin-left: 25%;
+}
+
+.category {
+	color: white;
+	padding-top: 5px;
+	font: 20px Arial, serif;
+}
+
+#submit {
+	margin-top: 10px;
+	margin-left: 25%;
+}

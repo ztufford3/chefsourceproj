@@ -20,18 +20,63 @@
     <![endif]-->
   </head>
   <body>
+    <div class="site-wrapper" ng-controller="site-control">
+      <div class="page-container">
+
+        <div class="page-top">
+          <h3 class="register">User Registration</h3>
+        </div>
+
+          <div class="bar">
+            <p class="category">First Name:</p>
+            <input type="text" maxlength="10" class="text-field" />
+          </div>
+
+          <div class="bar">
+            <p class="category">Last Name:</p>
+            <input type="text" maxlength="10" class="text-field" />
+          </div>
+
+          <div class="bar">
+            <p class="category">Location:</p>
+            <input type="text" maxlength="40" class="text-field" />
+          </div>
+        
+          <div class="bar">
+            <p class="category">Pantry</p>
+            <input type="text" maxlength="60" class="text-field" />
+          </div>
+
+          <div class="bar">
+            <p class="category">Dietary Restrictions:</p>
+            <input type="text" maxlength="40" class="text-field" />
+          </div>
+
+          <input type="button" class="btn btn-primary" id="submit" ng-click="submitreg()" value="Submit" />
+
+      </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-     var app = angular.module('registration-page', []);
-      app.controller('button-controller', ['$scope', '$window', function($scope, $window) {
-        $scope.done=function(){
-          $window.location='profile.html';
-        }
-      }]);
+    var app=angular.module('registration-page', []);
+    app.controller('site-control', ['$scope','$window',function($scope,$window){
+      $scope.submitreg=function(){
+        for (var i = document.getElementsByClassName('text-field').length - 1; i >= 0; i--) {
+          var text=document.getElementsByClassName('text-field')[i].value;
+          if(!text.match(/\S/)){
+            $window.alert('Please fill out all the fields');
+            break;
+          } else {
+            //TODO
+            $window.location="profile.html";
+          }
+        };
+      };
+    }]);
     </script>
   </body>
 </html>
