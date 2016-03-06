@@ -26,8 +26,8 @@
         <div class="head clearfix">
           <div class="page-top">
             <nav>
-                <button type="button" class="btn btn-primary" id="back" ng-click="goback()">Back</button>
-                <button type="button" class="btn btn-primary" id="edit" ng-click="edit()">Edit</button>
+                <input type="button" class="btn btn-primary" id="back" ng-click="goback()" value="Back" />
+                <input type="button" class="btn btn-primary" id="edit" ng-click="edit()" value="Edit" />
             </nav>
             <h3 class="profile">Profile</h3>
           </div>
@@ -37,37 +37,37 @@
           <div class="bar">
             <h1 class="category">Name</h1>
           </div>
-          <div class="name-field" id="nmfd">
+          <div class="name-field">
+            <!--TODO-->
           </div>
 
           <div class="bar">
             <h1 class="category">Location</h1>
           </div>
           <div class="location-field">
-            <h1 class="locationname">North Ave Apartments</h1>
+            <!--TODO-->
           </div>
         
           <div class="bar">
             <h1 class="category">Pantry</h1>
           </div>
           <div class="pantry-field">
-            <h1 class="pantryname">Flour</h1>
-            <h1 class="pantryname">Sugar</h1>
+            <!--TODO-->
           </div>
 
           <div class="bar">
             <h1 class="category">Share Count</h1>
           </div>
           <div class="share-field">
-            <h1 class="sharename">Items Shared:</h1>
-            <h1 class="sharename">Items Received:</h1>
+            <p class="sharename">Items Shared:</p> <!--TODO-->
+            <p class="sharename">Items Received:</p> <!--TODO-->
           </div>
 
           <div class="bar">
             <h1 class="category">Dietary Restrictions</h1>
           </div>
           <div class="diet-field">
-            <h1 class="dietname">None</h1>
+            <!--TODO-->
           </div>
 
       </div>
@@ -87,10 +87,28 @@
         };
 
         $scope.edit=function(){
-          var box = '<form><input type="text" maxlength="20" /></form>';
-          var topscope = angular.element(document).scope();
-          var elem = $compile(box)(topscope);
-          angular.element(document.getElementById('nmfd')).append(elem);
+          var buttonText = document.getElementById('edit').value;
+          if(buttonText=='Edit') {
+            var namebox = '<form><input type="text" maxlength="20" class="text-box" /></form>';
+            var locbox = '<form><input type="text" maxlength="20" class="text-box" /></form>';
+            var pantrybox = '<form><input type="text" maxlength="100" class="text-box" /></form>';
+            var dietbox = '<form><input type="text" maxlength="40" class="text-box" /></form>';
+            var topScope = angular.element(document).scope();
+            var nameElem = $compile(namebox)(topScope);
+            var locElem = $compile(locbox)(topScope);
+            var pantryElem = $compile(pantrybox)(topScope);
+            var dietElem = $compile(dietbox)(topScope);
+            angular.element(document.getElementsByClassName('name-field')[0]).append(nameElem);
+            angular.element(document.getElementsByClassName('location-field')[0]).append(locElem);
+            angular.element(document.getElementsByClassName('pantry-field')[0]).append(pantryElem);
+            angular.element(document.getElementsByClassName('diet-field')[0]).append(dietElem);
+            document.getElementById('edit').value='Done';
+          } else if(buttonText=='Done') {
+            for (var i = document.getElementsByClassName('text-box').length - 1; i >= 0; i--) {
+              angular.element(document.getElementsByClassName('text-box')[i]).remove();
+            };
+            document.getElementById('edit').value='Edit';
+          }
         };
       }]);
 
