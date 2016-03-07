@@ -20,6 +20,7 @@
     <![endif]-->
   </head>
   <body>
+
     <div class="site-wrapper" ng-controller="site-control">
       <div class="page-container">
 
@@ -29,27 +30,27 @@
 
           <div class="bar">
             <p class="category">First Name:</p>
-            <input type="text" maxlength="10" class="text-field" />
+            <input type="text" maxlength="10" class="text-field" id="fname" value="Jack"/>
           </div>
 
           <div class="bar">
             <p class="category">Last Name:</p>
-            <input type="text" maxlength="10" class="text-field" />
+            <input type="text" maxlength="10" class="text-field" id="lname" value="Tufford" />
           </div>
 
           <div class="bar">
             <p class="category">Location:</p>
-            <input type="text" maxlength="40" class="text-field" />
+            <input type="text" maxlength="40" class="text-field" id="loc" value="Duluth" />
           </div>
         
           <div class="bar">
             <p class="category">Pantry</p>
-            <input type="text" maxlength="60" class="text-field" />
+            <input type="text" maxlength="60" class="text-field" value="Stuff" />
           </div>
 
           <div class="bar">
             <p class="category">Dietary Restrictions:</p>
-            <input type="text" maxlength="40" class="text-field" />
+            <input type="text" maxlength="40" class="text-field" id="dietr" value="None" />
           </div>
 
           <input type="button" class="btn btn-primary" id="submit" ng-click="submitreg()" value="Submit" />
@@ -59,22 +60,24 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
     <script>
     var app=angular.module('registration-page', []);
     app.controller('site-control', ['$scope','$window',function($scope,$window){
       $scope.submitreg=function(){
-        for (var i = document.getElementsByClassName('text-field').length - 1; i >= 0; i--) {
-          var text=document.getElementsByClassName('text-field')[i].value;
-          if(!text.match(/\S/)){
-            $window.alert('Please fill out all the fields');
-            break;
-          } else {
-            //TODO
-            $window.location="profile.html";
-          }
-        };
+          var first=document.getElementById('fname').value;
+          var last=document.getElementById('lname').value;
+          var loc=document.getElementById('loc').value;
+          var diet=document.getElementById('dietr').value;
+          var arr = {'$first':first, '$last':last, '$loc':loc, '$diet':diet};
+          $.ajax({
+            type: "POST",
+            url: "newuser.php",
+            data: {arr:JSON.stringify(arr)},
+            cache: false,
+            success: function(){}
+            });
       };
     }]);
     </script>
