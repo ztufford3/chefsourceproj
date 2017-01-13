@@ -1,0 +1,24 @@
+<ion-view title="Pantry">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon ion-arrow-left-c" ng-click="back()">
+       Back
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <form class="create-form" role="form"
+        ng-submit="submit()">
+      <div class="list" id="tagcont">
+            <tags-input ng-model="tags" display-property="name" placeholder="Enter an Ingredient"
+            on-tag-added="pushItem($tag.name)"
+            on-tag-removed="popItem($tag.name)">
+            <auto-complete source="loadTags($query)"
+            min-length="0"
+            load-on-focus="true"
+            max-results-to-show="5"></auto-complete></tags-input>
+      </div>
+      <input class="button button-block button-balanced" type="submit" value="Submit" ng-click="addItems(tags)" />
+    </form>
+    <div class="list">
+    </div>
+  </ion-content>
+</ion-view>

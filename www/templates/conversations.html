@@ -1,0 +1,16 @@
+<ion-view view-title="Conversations">
+	<ion-nav-buttons side="left">
+		<button class="button button-icon ion-arrow-left-c" ng-click="back()">
+	     Back
+	  </button>
+	</ion-nav-buttons>
+  <ion-content class="has-header padding">
+  	<div class="list">
+	    <a class="item item-avatar" ui-sref="chatroom({chatid: hash, otheruser: otherUser})" ng-repeat="conversation in conversations">
+	      <img src="">
+	      <h2>{{conversation.otherUser}}</h2>
+	      <p></p>
+	    </a>
+		</div>
+  </ion-content>
+</ion-view>

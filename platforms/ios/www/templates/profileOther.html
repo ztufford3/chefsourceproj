@@ -1,0 +1,58 @@
+<ion-view view-title="Profile">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon ion-arrow-left-c" ng-click="back()">
+       Back
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header padding">
+    <div class="card">
+      <div class="item item-divider"><h1 class="catname">Name</h1></div>
+      <div class="item item-text-wrap">{{fullname}}</div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider"><h1 class="catname">Location</h1></div>
+      <div class="item item-text-wrap">{{loc}}</div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider"><h1 class="catname">Sharecount</h1></div>
+      <div class="item item-text-wrap">
+        Items Received: {{itemsreceived}}<br>Items Shared: {{itemsshared}}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">
+        <div class = "row">
+          <div class="col">
+            <h1 class="catname">Pantry</h1>
+          </div>
+        </div>
+      </div>
+      <div class="item item-text-wrap" style="margin-right:auto;margin-left:auto;">
+        <nav id="unorderedpantry">
+      <ul>
+        <li ng-repeat="item in pantrylist">
+          {{item}}
+        </li>
+      </ul>
+    </nav>
+    </div>
+    </div>
+
+    <div class="card">
+       <div class="item item-divider">
+        <div class = "row">
+          <div class="col">
+            <h1 class="catname">Restrictions</h1>
+          </div>
+        </div>
+      </div>
+      <nav id="restrictions">
+      <div class="item item-text-wrap">{{diet}}</div>
+    </nav>
+    </div>
+
+  </ion-content>
+</ion-view>

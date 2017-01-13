@@ -1,0 +1,55 @@
+html,
+body {
+	height: 100%;
+	background-color: #e6e6e6;
+}
+
+.catname {
+	color: white;
+	font: 22px Arial, serif;
+}
+
+.button-tiny {
+  padding: 3px 3px 3px;
+  min-width: 20px;
+  min-height: 20px;
+  font-size: 12px;
+  line-height: 16px; }
+  .button-small .icon:before, .button-small.icon:before, .button-small.icon-left:before, .button-small.icon-right:before {
+    font-size: 10px;
+    line-height: 16px;
+    margin-top: 10px; }
+.cont {
+  height: 80px;
+}
+
+#tagcont {
+  height: 440px;
+}
+
+#note {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  padding: 1px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 1px 0 lightgray inset;
+  height: 100px;
+  
+}
+
+#note:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+  -moz-box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+  box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+  width:99%;
+}
+
+#unorderedpantry ul{height:40px; width:200px;}
+#unorderedpantry ul{overflow:hidden; overflow-y:scroll;}
+#restrictions div{height:60px; width:200px;}
+#restrictions div{overflow: :hidden; overflow-y:scroll;}

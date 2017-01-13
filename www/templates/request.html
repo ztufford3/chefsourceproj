@@ -1,0 +1,53 @@
+<ion-view title="New Request">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon ion-arrow-left-c" ng-click="back()">
+       Back
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header padding">
+    <form class="create-form" role="form"
+        ng-submit="makeRequest()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">What do you need?</span>
+            <tags-input ng-model="tagss" display-property="name" placeholder="Enter an Ingredient"
+            on-tag-added="pushItem($tag.name)"
+            on-tag-removed="popItem($tag.name)"
+            class="form-control"
+            style="-webkit-transform:translateZ(1px);">
+            <auto-complete source="loadTags($query)"
+            min-length="0"
+            load-on-focus="true"
+            max-results-to-show="5"></auto-complete></tags-input>
+        </label>
+        <label class="item item-input item-select" style="-webkit-transform:translate3d(0,0,0);-webkit-transform:translateZ(0px);">
+          <div class="input-label">
+            When do you need it?
+          </div>
+          <select ng-model="req.duration" name="duration" ng-init="req.duration='1 hour'">
+            <option value="1 hour">One Hour</option>
+            <option value="5 hours">5 Hours</option>
+            <option value="1 day">1 Day</option>
+            <option value="2 days">2 Days</option>
+            <option value="3 days">3 Days</option>
+            <option value="4 days">4 Days</option>
+            <option value="5 days">5 Days</option>
+            <option value="1 week">1 Week</option>
+          </select>
+        </label>
+        <!--<label class="item item-input item-stacked-label" style="z-index:0;">
+          <span class="input-label">Dietary Restrictions</span>
+            <input type="text" class="form-control"
+               value={{diet}}>
+        </label>-->
+        <label class="item item-input item-stacked-label" style="-webkit-transform:translate3d(0,0,0);-webkit-transformZ(0px);">
+          <span class="input-label">Note (Optional)</span>
+            <textarea type="text" class="form-control" ng-model="$parent.reqnote" ngmax-length="maxLength"
+            id="note"></textarea>
+            <span> Characters Left: {{maxLength-reqnote.length}}</span>
+        </label>
+      </div>
+      <input class="button button-block button-balanced" ui-sref="bulletin" type="submit" value="Submit" ng-click="makeRequest()"/>
+    </form>
+  </ion-content>
+</ion-view>

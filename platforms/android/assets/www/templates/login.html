@@ -1,0 +1,21 @@
+<ion-view title="Login">
+  <ion-content class="has-header padding">
+    <form class="create-form" role="form"
+        ng-submit="">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Username</span>
+            <input type="text" class="form-control"
+               placeholder="Username" ng-model="username">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Password</span><i class="icon ion-eye" on-touch="showPassword = !showPassword"></i>
+          <input type="password" id="password" placeholder="Password" ng-model="password" ng-hide="showPassword">
+          <input type="text" id="passwordRaw" placeholder="Password" ng-model="password" ng-show="showPassword">
+        </label>
+      </div>
+      <input class="button button-block button-balanced" ui-sref="bulletin" type="submit" value="Login" />
+    </form>
+  <button class="button button-block button-positive" ui-sref="registration">Register New Account</button>
+  </ion-content>
+</ion-view>
